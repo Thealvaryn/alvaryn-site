@@ -33,7 +33,7 @@ body {
   transition: background 0.3s ease;
 }
 .logo {
-  height: 60px;
+  height: 180px;
   width: auto;
 }
 .nav-links {
@@ -64,7 +64,7 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  padding-top: 6rem;              /* space for the fixed nav */
+  padding-top: 6rem; /* space for the fixed nav */
   height: 80vh;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex;
@@ -75,7 +75,7 @@ body {
   color: white;
 }
 .hero::after {
-  content: '';
+  content: ''; 
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
