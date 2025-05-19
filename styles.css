@@ -19,33 +19,29 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR (at the very top of the hero) */
+/* NAVBAR */
 .nav {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  padding: 0.5rem 2rem;      /* pull it up with less top padding */
+  padding: 0.3rem 2rem;    /* smaller top padding to pull it up */
   z-index: 10;
-  background: transparent;
 }
 
-/* LOGO (left column) */
+/* LOGO - left */
 .logo {
-  grid-column: 1;
   height: 180px;
   width: auto;
 }
 
-/* LINKS (center column) */
+/* NAV LINKS - centered by margin auto */
 .nav-links {
-  grid-column: 2;
   display: flex;
-  justify-content: center;
   gap: 2rem;
+  margin: 0 auto;          /* this pushes links to exact center */
   list-style: none;
 }
 .nav-links a {
@@ -54,9 +50,8 @@ body {
   font-weight: 500;
 }
 
-/* SHOP NOW BUTTON (right column) */
+/* SHOP NOW - right */
 .btn-primary {
-  grid-column: 3;
   background: var(--accent-color);
   color: white;
   padding: 0.5rem 1rem;
@@ -72,7 +67,7 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  padding-top: 12rem;       /* space for the tall nav/logo */
+  padding-top: 14rem;       /* enough space for 180px logo + nav */
   height: 80vh;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex;
