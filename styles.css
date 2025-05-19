@@ -19,36 +19,33 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR */
+/* NAVBAR (absolute container) */
 .nav {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  display: grid;
-  grid-template-columns: 
-    180px    /* exact logo width */
-    1fr      /* flexible center for links */
-    100px;   /* enough for Shop Now button */;
-  align-items: center;
-  padding: 0.3rem 1rem;
+  height: 180px;    /* match your logo height */
   z-index: 10;
-  background: transparent;
 }
 
-/* LOGO (left column) */
+/* LOGO — far left */
 .logo {
-  grid-column: 1;
+  position: absolute;
+  top: 0;
+  left: 2rem;
   height: 180px;
   width: auto;
 }
 
-/* NAV LINKS (center column) */
+/* NAV LINKS — perfectly centered on page */
 .nav-links {
-  grid-column: 2;
+  position: absolute;
+  top: 1rem;         /* adjust to vertically align with logo/button */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
 }
 .nav-links a {
@@ -57,10 +54,11 @@ body {
   font-weight: 500;
 }
 
-/* SHOP NOW BUTTON (right column) */
+/* SHOP NOW — far right */
 .btn-primary {
-  grid-column: 3;
-  justify-self: end;
+  position: absolute;
+  top: 0.75rem;      /* adjust to vertically align with links */
+  right: 2rem;
   background: var(--accent-color);
   color: white;
   padding: 0.5rem 1rem;
@@ -76,7 +74,7 @@ body {
 /* HERO SECTION */
 .hero {
   position: relative;
-  padding-top: calc(180px + 1rem); /* logo height + nav padding */
+  padding-top: calc(180px + 1rem);  /* 180px logo + ~1rem nav gap */
   height: 80vh;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex;
