@@ -23,18 +23,30 @@ body {
 .nav {
   position: relative;
   display: flex;
-  justify-content: center;    /* center the middle group */
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
   z-index: 10;
 }
 
-/* Logo on the left */
+/* Logo positioned left */
 .logo {
   position: absolute;
   left: 2rem;
   height: 180px !important;
   width: auto !important;
+}
+
+/* Centered navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
 }
 
 /* Primary button on the right */
@@ -45,34 +57,9 @@ body {
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-}
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-/* Centered nav-links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* BUTTONS */
-.btn {
   cursor: pointer;
-  border: none;
   font-weight: 600;
-}
-.btn-primary {
-  background: var(--accent-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border: none;
 }
 .btn-primary:hover {
   opacity: 0.9;
@@ -81,7 +68,7 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  padding-top: 10rem;         /* space for taller nav/logo */
+  padding-top: 10rem; /* space for taller nav/logo */
   height: 80vh;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex;
@@ -117,6 +104,9 @@ body {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
 }
 .btn-hero:hover {
   opacity: 0.9;
@@ -162,6 +152,9 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
 }
 .btn-secondary:hover {
   opacity: 0.9;
