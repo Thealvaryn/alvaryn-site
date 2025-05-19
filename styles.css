@@ -33,8 +33,8 @@ body {
   transition: background 0.3s ease;
 }
 .logo {
-  height: 180px;
-  width: auto;
+  height: 180px !important;
+  width: auto !important;
 }
 .nav-links {
   list-style: none;
