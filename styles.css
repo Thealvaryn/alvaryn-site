@@ -23,22 +23,24 @@ body {
 .nav {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 10;
+  background: transparent;
 }
 
-/* Logo positioned left */
+/* LOGO */
 .logo {
-  position: absolute;
-  left: 2rem;
-  height: 180px !important;
-  width: auto !important;
+  height: 180px;
+  width: auto;
 }
 
-/* Centered navigation links */
+/* NAV LINKS - centered */
 .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -49,10 +51,8 @@ body {
   font-weight: 500;
 }
 
-/* Primary button on the right */
+/* SHOP NOW BUTTON */
 .btn-primary {
-  position: absolute;
-  right: 2rem;
   background: var(--accent-color);
   color: white;
   padding: 0.5rem 1rem;
@@ -68,7 +68,7 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  padding-top: 10rem; /* space for taller nav/logo */
+  padding-top: 12rem; /* adjust for taller nav/logo */
   height: 80vh;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex;
