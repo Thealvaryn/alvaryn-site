@@ -2,38 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Alvaryn Collections</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- HEADER / HERO -->
   <header class="hero">
+    <nav class="nav">
+      <img src="assets/logo.svg" alt="Alvaryn Collections" class="logo">
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary">Shop Now</button>
+    </nav>
     <div class="hero-content">
-      <h1>Alvaryn Collections</h1>
-      <p class="tagline">Curated puzzles & refined apparel for an inspired life</p>
+      <h1>Where Curiosity Meets Craft</h1>
+      <p>Discover puzzles as art.</p>
+      <a href="#shop" class="btn btn-hero">Browse Curated Puzzles</a>
     </div>
   </header>
 
-  <main class="collections">
-    <a href="puzzles.html" class="card">
-      <div class="card-content">
-        <h2>Collection #1</h2>
+  <!-- COLLECTIONS GRID -->
+  <section id="shop" class="collections">
+    <h2>Featured Collections</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/collection1.jpg" alt="Luxury Puzzle Set">
+        <h3>Collection #1</h3>
         <p>Luxury Puzzle Sets</p>
+        <a href="#" class="btn btn-secondary">Discover</a>
       </div>
-      <span class="card-cta">Discover →</span>
-    </a>
-    <!-- future example:
-    <a href="apparel.html" class="card">
-      <div class="card-content">
-        <h2>Collection #2</h2>
-        <p>Timeless Apparel</p>
-      </div>
-      <span class="card-cta">Discover →</span>
-    </a>
-    -->
-  </main>
+      <!-- copy .card for more collections -->
+    </div>
+  </section>
 
-  <footer>
-    <p>Questions? ✉️ <a href="mailto:thealvaryn@gmail.com">thealvaryn@gmail.com</a></p>
+  <!-- STORY -->
+  <section id="story" class="story">
+    <h2>Our Story</h2>
+    <p>At Alvaryn, we believe every puzzle tells a tale. Hand-picked from artisans around the globe, our sets blend craftsmanship with curiosity.</p>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="footer-nav">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="social">
+      <!-- replace # with your social URLs -->
+      <a href="#"><img src="assets/icon-instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="assets/icon-pinterest.svg" alt="Pinterest"></a>
+    </div>
+    <p>Email us at <a href="mailto:thealvaryn@gmail.com">thealvaryn@gmail.com</a></p>
+    <p>© 2025 Alvaryn Collections</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
