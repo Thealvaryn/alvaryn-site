@@ -1,59 +1,89 @@
 /* styles.css */
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* 1. Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background: #f5f5f5;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* 2. Header */
 header {
   text-align: center;
   margin-bottom: 2rem;
 }
-
 header h1 {
   font-size: 2.5rem;
-  color: teal;
+  color: #046d6d;        /* Teal */
 }
-
 header p {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   color: #555;
   margin-top: 0.5rem;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+/* 3. Navigation / Button */
+nav {
+  text-align: center;
   margin-bottom: 2rem;
 }
-
+nav ul {
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
 nav a {
-  text-decoration: none;
-  background: teal;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #046d6d;
   color: #fff;
-  padding: 0.5rem 1rem;
+  text-decoration: none;
   border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
 }
-
 nav a:hover {
-  background: #006d6d;
+  background-color: #035c5c;
 }
 
+/* 4. Collections List (if using a list style) */
+ul.collections {
+  list-style: none;
+  padding: 0;
+}
+ul.collections li {
+  margin-bottom: 1rem;
+}
+ul.collections a {
+  color: #046d6d;
+  text-decoration: none;
+  font-weight: 500;
+}
+ul.collections a:hover {
+  text-decoration: underline;
+}
+
+/* 5. Footer */
 footer {
   text-align: center;
   margin-top: 3rem;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
-
 footer a {
   color: #333;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
