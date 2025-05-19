@@ -21,33 +21,44 @@ body {
 
 /* NAV */
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 2rem;
+  position: relative;
   display: flex;
+  justify-content: center;    /* center the middle group */
   align-items: center;
-  justify-content: space-between;
+  padding: 1rem 2rem;
   z-index: 10;
-  transition: background 0.3s ease;
 }
 
-/* LOGO */
+/* Logo on the left */
 .logo {
+  position: absolute;
+  left: 2rem;
   height: 180px !important;
   width: auto !important;
 }
 
-/* NAV LINKS */
+/* Primary button on the right */
+.btn-primary {
+  position: absolute;
+  right: 2rem;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Centered nav-links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
 .nav-links a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   font-weight: 500;
 }
 
