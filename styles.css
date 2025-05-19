@@ -25,23 +25,30 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 
+    180px    /* exact logo width */
+    1fr      /* flexible center for links */
+    100px;   /* enough for Shop Now button */;
   align-items: center;
-  padding: 0.3rem 2rem;    /* smaller top padding to pull it up */
+  padding: 0.3rem 1rem;
   z-index: 10;
+  background: transparent;
 }
 
-/* LOGO - left */
+/* LOGO (left column) */
 .logo {
+  grid-column: 1;
   height: 180px;
   width: auto;
 }
 
-/* NAV LINKS - centered by margin auto */
+/* NAV LINKS (center column) */
 .nav-links {
+  grid-column: 2;
   display: flex;
+  justify-content: center;
   gap: 2rem;
-  margin: 0 auto;          /* this pushes links to exact center */
   list-style: none;
 }
 .nav-links a {
@@ -50,8 +57,10 @@ body {
   font-weight: 500;
 }
 
-/* SHOP NOW - right */
+/* SHOP NOW BUTTON (right column) */
 .btn-primary {
+  grid-column: 3;
+  justify-self: end;
   background: var(--accent-color);
   color: white;
   padding: 0.5rem 1rem;
@@ -64,10 +73,10 @@ body {
   opacity: 0.9;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   position: relative;
-  padding-top: 14rem;       /* enough space for 180px logo + nav */
+  padding-top: calc(180px + 1rem); /* logo height + nav padding */
   height: 80vh;
   background: url('assets/hero.jpg') center/cover no-repeat;
   display: flex;
@@ -200,7 +209,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* STICKY NAV BACKGROUND ON SCROLL */
+/* STICKY NAV BG ON SCROLL */
 .nav--scrolled {
   background: rgba(0, 0, 0, 0.6);
 }
