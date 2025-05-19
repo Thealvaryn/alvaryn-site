@@ -111,3 +111,10 @@ body {
 .footer-nav a { color: white; text-decoration: none; }
 .social img { height: 24px; margin: 0 0.5rem; }
 .footer p { margin-top: 0.5rem; font-size: 0.9rem; }
+
+/* sticky nav style */
+.nav--scrolled {
+  background: rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease;
+}
+
