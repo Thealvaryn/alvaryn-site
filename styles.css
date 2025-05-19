@@ -1,110 +1,113 @@
-/* 1) Import a clean, modern font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap');
-
+/* VARIABLES */
 :root {
-  --brand: #0b6e63;       /* deep teal */
-  --light: #fafafa;       /* off-white bg */
-  --dark: #333;           /* text */
-  --accent: #f2c14e;      /* warm gold */
-  --transition: 0.3s ease;
+  --main-color: #236B5A;
+  --accent-color: #D4A72C;
+  --light-gray: #F7F7F7;
+  --dark-gray: #333;
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* GLOBAL RESET */
 * {
   margin: 0; padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--dark);
-  background-color: var(--light);
+  font-family: var(--font-sans);
+  color: var(--dark-gray);
   line-height: 1.6;
 }
 
-/* 2) Hero Banner */
+/* NAV */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute; width: 100%;
+}
+.logo { height: 40px; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; }
+.nav-links a { text-decoration: none; color: white; font-weight: 500; }
+.btn { cursor: pointer; border: none; font-weight: 600; }
+.btn-primary {
+  background: var(--accent-color);
+  color: white; padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.btn-primary:hover { opacity: 0.9; }
+
+/* HERO */
 .hero {
-  background: linear-gradient(
-    to right bottom,
-    rgba(11,110,99,0.85),
-    rgba(11,110,99,0.75)
-  ), url('https://source.unsplash.com/1600x900/?puzzle,pattern') center/cover no-repeat;
-  color: #fff;
-  padding: 6rem 1rem;
-  text-align: center;
+  height: 80vh;
+  background: url('assets/hero.jpg') center/cover no-repeat;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; color: white;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.4);
 }
 .hero-content {
-  max-width: 600px;
-  margin: 0 auto;
+  position: relative; z-index: 1;
+  max-width: 600px; padding: 0 1rem;
 }
-.hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+.hero-content h1 {
+  font-size: 3rem; margin-bottom: 1rem;
 }
-.hero .tagline {
-  font-size: 1.25rem;
-  opacity: 0.9;
+.hero-content p { font-size: 1.25rem; margin-bottom: 1.5rem; }
+.btn-hero {
+  background: var(--accent-color);
+  color: white; padding: 0.75rem 1.5rem;
+  border-radius: 4px; text-decoration: none;
 }
+.btn-hero:hover { opacity: 0.9; }
 
-/* 3) Collections Grid */
+/* COLLECTIONS */
 .collections {
+  padding: 4rem 2rem; text-align: center;
+}
+.collections h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--main-color); }
+.grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
   gap: 2rem;
-  max-width: 900px;
-  margin: -4rem auto 3rem;  /* lift over the hero */
-  padding: 0 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-
 .card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-decoration: none;
-  color: var(--dark);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  transition: transform var(--transition), box-shadow var(--transition);
+  background: white; padding: 1rem;
+  border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
 }
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.card img {
+  width: 100%; border-radius: 4px;
+  margin-bottom: 1rem;
 }
-.card-content h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-  color: var(--brand);
+.card h3 { color: var(--main-color); margin-bottom: 0.5rem; }
+.card p { margin-bottom: 1rem; }
+.btn-secondary {
+  background: var(--main-color);
+  color: white; padding: 0.5rem 1rem;
+  border-radius: 4px; text-decoration: none;
 }
-.card-content p {
-  font-size: 1rem;
-  opacity: 0.8;
-}
+.btn-secondary:hover { opacity: 0.9; }
 
-/* 4) CTA Arrow */
-.card-cta {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-/* 5) Footer */
-footer {
+/* STORY */
+.story {
+  background: var(--light-gray);
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid #eee;
-  font-size: 0.9rem;
 }
-footer a {
-  color: var(--brand);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--brand);
+.story h2 { font-size: 2rem; margin-bottom: 1rem; }
+.story p { max-width: 600px; margin: 0 auto; }
+
+/* FOOTER */
+.footer {
+  background: var(--dark-gray);
+  color: white; padding: 2rem;
+  text-align: center;
 }
-footer a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
+.footer-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+.footer-nav a { color: white; text-decoration: none; }
+.social img { height: 24px; margin: 0 0.5rem; }
+.footer p { margin-top: 0.5rem; font-size: 0.9rem; }
