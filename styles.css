@@ -1,89 +1,110 @@
-/* styles.css */
+/* 1) Import a clean, modern font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap');
 
-/* 1. Reset and Base Styles */
+:root {
+  --brand: #0b6e63;       /* deep teal */
+  --light: #fafafa;       /* off-white bg */
+  --dark: #333;           /* text */
+  --accent: #f2c14e;      /* warm gold */
+  --transition: 0.3s ease;
+}
+
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
   line-height: 1.6;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
 }
 
-/* 2. Header */
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-header h1 {
-  font-size: 2.5rem;
-  color: #046d6d;        /* Teal */
-}
-header p {
-  font-size: 1.125rem;
-  color: #555;
-  margin-top: 0.5rem;
-}
-
-/* 3. Navigation / Button */
-nav {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-nav ul {
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-  margin: 0 0.5rem;
-}
-nav a {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #046d6d;
+/* 2) Hero Banner */
+.hero {
+  background: linear-gradient(
+    to right bottom,
+    rgba(11,110,99,0.85),
+    rgba(11,110,99,0.75)
+  ), url('https://source.unsplash.com/1600x900/?puzzle,pattern') center/cover no-repeat;
   color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.2s ease-in-out;
+  padding: 6rem 1rem;
+  text-align: center;
 }
-nav a:hover {
-  background-color: #035c5c;
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
 }
-
-/* 4. Collections List (if using a list style) */
-ul.collections {
-  list-style: none;
-  padding: 0;
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
 }
-ul.collections li {
-  margin-bottom: 1rem;
-}
-ul.collections a {
-  color: #046d6d;
-  text-decoration: none;
-  font-weight: 500;
-}
-ul.collections a:hover {
-  text-decoration: underline;
+.hero .tagline {
+  font-size: 1.25rem;
+  opacity: 0.9;
 }
 
-/* 5. Footer */
+/* 3) Collections Grid */
+.collections {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin: -4rem auto 3rem;  /* lift over the hero */
+  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.card-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--brand);
+}
+.card-content p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* 4) CTA Arrow */
+.card-cta {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* 5) Footer */
 footer {
   text-align: center;
-  margin-top: 3rem;
-  font-size: 0.875rem;
+  padding: 2rem 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
 }
 footer a {
-  color: #333;
+  color: var(--brand);
   text-decoration: none;
+  border-bottom: 1px dashed var(--brand);
 }
 footer a:hover {
-  text-decoration: underline;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
