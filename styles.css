@@ -7,6 +7,11 @@
   --font-sans: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Enable smooth scrolling for all anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
 /* RESET */
 *, *::before, *::after {
   margin: 0;
